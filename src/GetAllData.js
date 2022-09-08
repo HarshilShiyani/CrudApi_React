@@ -1,4 +1,3 @@
-import "./GetAllData.css";
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +23,7 @@ export default function GetAllData() {
             <div
               class="card d-shadow-v1--hover"
               onClick={() => {
-                navigate("/display/" + i.id);
+                navigate("/displaystu/" + i.id);
               }}
             >
               <img class="card-img-top" src={i.avatar} alt="imgload" />

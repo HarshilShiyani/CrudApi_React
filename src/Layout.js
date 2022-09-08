@@ -4,11 +4,11 @@ import { Outlet, Link } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <nav class="navbar shadow  navbar-expand-lg pt-0 pb-0">
-        <div class="container-fluid ">
+      <nav class="navbar shadow navbar-expand-lg bg-light">
+        <div class="container-fluid">
           <div class="logofull">
             <Link to="home">
-              <i class="fa-brands fa-react fs-3 ps-5" href="home"></i>
+              <i class="fa-brands fa-react fs-1 ps-5" href="home"></i>
             </Link>
           </div>
           <button
@@ -26,33 +26,36 @@ const Layout = () => {
             <ul class="navbar-nav ms-auto ">
               <li class="nav-item me-5">
                 <Link to="home" class="nav-link fs-5 text-center">
-                  Home
+                  <strong className="fs-4">Home</strong>
                 </Link>
               </li>
+              <li class="nav-item dropdown me-5">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <strong className="fs-4">Student </strong>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><Link to="/displaystu/add" class="dropdown-item" href="#"><strong className="fs-4">Add New Student <b> &nbsp;+ </b></strong></Link></li>
+                  <li><Link to="/displaystu" class="dropdown-item" href="#"><strong className="fs-4">Display All Student</strong></Link></li>
 
-              <li class="nav-item me-5">
-                <Link to="/displaystu" class="nav-link fs-6  text-center">
-                  Student
-                </Link>
+                </ul>
               </li>
-              <li class="nav-item me-5">
-                <Link to="/displaystu/add" class="nav-link fs-6 text-center">
-                  Add New Student
-                </Link>
-              </li>
-              <li class="nav-item me-5">
-                <Link to="/displayfacu" class="nav-link fs-6 text-center">
-                  Faculty
-                </Link>
+              <li class="nav-item dropdown me-5">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <strong className="fs-4">Faculty</strong>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><Link to="/displayfacu/add" class="dropdown-item" href="#"><strong className="fs-4">Add New Faculty <b> &nbsp;+ </b></strong></Link></li>
+                  <li><Link to="/displayfacu" class="dropdown-item" href="#"><strong className="fs-4">Display All Faculty</strong></Link></li>
+                </ul>
               </li>
               <li class="nav-item me-5">
                 <Link to="/aboutus" class="nav-link fs-6  text-center">
-                  About Us
+                  <strong className="fs-4">About Us</strong>
                 </Link>
               </li>
               <li class="nav-item me-5">
                 <Link to="/contactus" class="nav-link fs-6  text-center">
-                  Contact Us
+                  <strong className="fs-4">Contact Us</strong>
                 </Link>
               </li>
             </ul>

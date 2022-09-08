@@ -7,10 +7,11 @@ export default function AddData() {
   const [data, setData] = useState({});
   return (
     <>
-      <form class="text-center">
+    <div>
+    <form class="mt-5  ps-5 pe-0">
         <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-form-label" required>
-            Name:
+          <label class="col-sm-2 col-form-label fs-4" required>
+            <strong>Name:</strong>
           </label>
           <div class="col-sm-6">
             <input
@@ -24,8 +25,8 @@ export default function AddData() {
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="text" class="col-sm-2 col-form-label">
-            Select-Image:
+          <label class="col-sm-2 col-form-label fs-4">
+            <strong>Select-Image:</strong>
           </label>
           <div class="col-sm-6">
             <input
@@ -39,8 +40,8 @@ export default function AddData() {
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-form-label">
-            salary:
+          <label class="col-sm-2 col-form-label fs-4">
+          <strong>Salary:</strong>
           </label>
           <div class="col-sm-6">
             <input
@@ -54,8 +55,8 @@ export default function AddData() {
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="text" class="col-sm-2 col-form-label">
-            Status:
+          <label class="col-sm-2 col-form-label fs-4">
+            <strong>Status:</strong>
           </label>
           <div class="col-sm-6">
             <input
@@ -68,9 +69,57 @@ export default function AddData() {
             />
           </div>
         </div>
+        <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label fs-4">
+          <strong>City:</strong>
+        </label>
+        <div class="col-sm-6">
+          <input
+            value={data.city}
+            type="text"
+            class="form-control"
+            onChange={(e) => {
+              setData({ ...data, city: e.target.value });
+            }}
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label fs-4">
+          <strong>Pin Code:</strong>
+        </label>
+        <div class="col-sm-6">
+          <input
+            value={data.pin}
+            type="text"
+            class="form-control"
+            onChange={(e) => {
+              setData({ ...data, pin: e.target.value });
+            }}
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label fs-4">
+          <strong>Qualification:</strong>
+        </label>
+        <div class="col-sm-6">
+          <input
+            value={data.qualification}
+            type="text"
+            class="form-control"
+            onChange={(e) => {
+              setData({ ...data, qualification: e.target.value });
+            }}
+            required
+          />
+        </div>
+      </div>
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn btn-primary center fs-4"
           value="Add Faculty"
           onClick={() => {
             fetch(api, {
@@ -84,9 +133,13 @@ export default function AddData() {
             });
           }}
         >
-          Submit
+          <strong>Submit</strong>
         </button>
       </form>
+
+    </div>
+      
+      
     </>
   );
 }
